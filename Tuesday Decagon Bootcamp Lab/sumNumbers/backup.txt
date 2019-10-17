@@ -1,0 +1,17 @@
+function sumNumbers (str) {
+  // your code goes here...
+//an empty array to store all the numbers
+onlyNumbers = [];
+//loop through the string
+str = str.split('');
+for(var i = 0; i < str.length; i++){
+  if(isNaN(str[i]) === false){
+    
+    onlyNumbers.push(str[i])}
+}
+//var result = onlyNumbers.reduce((a,b)=> a + b)
+return onlyNumbers;
+}
+console.log(sumNumbers('1weudh56jdnbfskjn788sdhkfbs90'))
+
+module.exports = sumNumbers

@@ -1,0 +1,35 @@
+Do you remember Ethan? Ethan the Mission Impossible Hero?
+Well today Ethan is not on a mission so he has to be gentle.
+
+Ethan is at the mall so early to pick up some groceries at the second floor
+but the stairs have just been cleaned and still wet. each step of the stairs is beautifully colored with white or black
+this means that Ethan would have to avoid the white stairs in other not to step on them and get them stained.
+
+if Ethan is given a maximum pace that can be cover "maxPace",
+find the minimum steps that is required for Ethan to reach the second floor and avoid stepping on the white wet steps
+in the format 'Finished with 5 steps'
+if Ethan gets stuck because he can not cover the white wet steps due to constraints of pace or other factors,
+return the position where he is and how many steps he has used in the format 'Stopped at position 0 with 0 step'
+
+
+given a array of lenght N with a collection of stairs 0s and 1s where 0 represents the WHITES and 1 represents the BLACKS
+and a maximum pace 'maxPace' return a string 'Finished with 5 steps' if Ethan can get to the top floor
+or 'Stopped at position 0 with 0 step' if Ethan gets stucked on the stairs.
+
+example:
+minimumSteps([1,1,1,1,1,0,1,0,1,0,1,1,0,1], 3) => `Finished with 5 steps`
+minimumSteps([0,1], 3)) => `Stopped at position 0 with 0 step`
+minimumSteps([1,1,1,1,1,0,1,0], 10) => `Stopped at position 6 with 1 step`
+
+////////////
+myAlgorithm
+////////////
+//1.initialize numOfStairs = 0;
+2.if steps at index[0] == 0 return `Stopped at position 0 with 0 step`
+3.if steps at index[0] == 1----loop through the stairs
+4.remove the stairs at index[maxspace]
+5.add it to a count
+6.if index[maxspace] = 0
+7.add it to a count also(as a back-step)
+8. return count//
+//consider the condtions given

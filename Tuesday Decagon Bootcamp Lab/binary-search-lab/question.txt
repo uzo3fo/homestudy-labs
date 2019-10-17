@@ -1,0 +1,25 @@
+Write a lab to test the binary search algorithm.
+
+Using the binary search algorithm, check if a given number is in a given sorted array of numbers.
+
+Given the sorted array [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]  and any number, the program
+should return the following:
+
+(1) If it finds the number in the array,
+ =>The index of the number in the array
+ =>The number of iterations taken for the algorithm to find the number
+
+(2) If the number is not in the array,
+ =>-1 for the index
+ =>The number of iterations taken for the algorithm to find the number
+
+The return format should be a JavaScript object of the form shown below
+
+{
+    "index" : index of the number in the array,
+    "count" : number of iterations taken to find the number
+}
+For example
+binarySearch([0, 5, 10, 15, 20, 22, 30, 35, 40], 15) → {index: 3, count: 3}
+binarySearch([0, 5, 10, 15, 20, 22, 30, 35, 40], 11) → {index: -1, count: 4}
+

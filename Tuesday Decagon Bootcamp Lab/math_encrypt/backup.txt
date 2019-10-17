@@ -1,0 +1,46 @@
+function solution(expression) {
+	//code goes in here....
+	let operators = expression.replace(/[0-9a-z\s]/gi, '').split('');
+	let operands = expression.replace(/[^0-9a-z]/gi, '').split('');
+
+	//if(operators.length = 1){return operands.concat(operators).join().replace( /,/g, "" );}
+
+	if(operators.length == 2){
+		var operand1 = operands.slice(0, 2);
+		var operand2 = operands.slice(2);
+		var operator1 = operators.slice(0, 1);
+		var operator2 = operators.slice(1);
+		var firstConcat = operand1.concat(operator1);
+		var secondConcat = operand2.concat(operator2);
+		return firstConcat.concat(secondConcat).join().replace( /,/g, "" );
+	}
+	const index = operators.findIndex(fruit => fruit === "(");
+	const index1 = operators.findIndex(fruit => fruit === ")");
+	
+	var operatorsInsideBrackets = operators.slice(index+1, index1).join().replace( /,/g, "" );
+	var operatorsBeforeBrackets = operators.slice(index-1, index).join().replace( /,/g, "" );
+	var operatorsAfterBrackets = operators.slice(index1+1).join().replace( /,/g, "" );
+	var operandsAfterBracket = operands.slice(index1).join().replace( /,/g, "" );
+	var operandsBeforeBracket = operands.slice(0, index1).join().replace( /,/g, "" );
+	var operandsInsideBracket = operands.slice(index, index1).join().replace( /,/g, "" );
+
+	if(operatorsInsideBrackets.includes('-')){
+    	var indexOfNegativeSign = operatorsInsideBrackets.indexOf(sign => sign === "-");
+    	var negativeSign = operatorsInsideBrackets.slice(indexOfNegativeSign);
+    	var negativeNum = operandsInsideBracket.slice(indexOfNegativeSign);
+    	var negativeConcat =negativeNum.concat(negativeSign);
+    	var operandConcat =operandsBeforeBracket.slice(0, indexOfNegativeSign)
+    	var operatorConcat =operatorsInsideBrackets.slice(0, indexOfNegativeSign)
+    	operatorsAfterBrackets = operatorsAfterBrackets.split('').reverse().join('');
+    	return operandConcat.concat(operatorConcat, negativeConcat, operatorsBeforeBrackets, operandsAfterBracket, operatorsAfterBrackets)
+    }
+
+	if(operatorsInsideBrackets.startsWith('*') === false){
+	   operatorsInsideBrackets = operatorsInsideBrackets.split('').reverse().join('');
+	   var result = operands.concat(operatorsInsideBrackets);
+	   return result.concat(operatorsBeforeBrackets).join().replace( /,/g, "" );
+		} else  operatorsInsideBrackets;
+
+		
+}
+	
